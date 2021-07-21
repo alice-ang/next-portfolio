@@ -215,6 +215,24 @@
   resolved "https://registry.npmjs.org/@rexxars/eventsource-polyfill/-/eventsource-polyfill-1.0.0.tgz"
   integrity sha512-YnrybIoM9WFqmeK1D8p/gutqjJnmXCVFWAU3ucka9M7Dzpen3f2Dy4KsC6k1wDHrCtHQuUHHwZovh3i5UPDaZw==
 
+"@sanity/block-content-to-hyperscript@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-3.0.0.tgz"
+  integrity sha512-uoXWLdFY5LqO8A9sFJqnZWWDCBC+0r3Egeh0bwKQ2EK2Vil5L40iJGNXMZhDB8BnvH+6B4155SU8Q3vY59T6pA==
+  dependencies:
+    "@sanity/generate-help-url" "^0.140.0"
+    "@sanity/image-url" "^0.140.15"
+    hyperscript "^2.0.2"
+    object-assign "^4.1.1"
+
+"@sanity/block-content-to-react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@sanity/block-content-to-react/-/block-content-to-react-3.0.0.tgz"
+  integrity sha512-oHPLlIsulsnL3ITs93RIvUPBI6nAeoSFOUf16vX4T7z4wWywxP39N1DF9mAx2tV6Kjr1fJAx5GF7zfiMXYLaqA==
+  dependencies:
+    "@sanity/block-content-to-hyperscript" "^3.0.0"
+    prop-types "^15.6.2"
+
 "@sanity/client@^2.13.0":
   version "2.13.0"
   resolved "https://registry.npmjs.org/@sanity/client/-/client-2.13.0.tgz"
@@ -236,12 +254,17 @@
     "@rexxars/eventsource-polyfill" "^1.0.0"
     eventsource "^1.0.6"
 
+"@sanity/generate-help-url@^0.140.0":
+  version "0.140.0"
+  resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-0.140.0.tgz"
+  integrity sha512-H/G/WA9S22TXcXST52CIiTsHx3S2hH0gvK7LnI5w76vfKS0obnDPh8jrPg4xeNRYGPuV9MHYRlyERGpRGoo4Qw==
+
 "@sanity/generate-help-url@^2.13.0":
   version "2.13.0"
   resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-2.13.0.tgz"
   integrity sha512-h+kRqRozLnmFC+ji82og7S60AQaY8Y4x/F1noS08M5T9N7mXCwGYZOHLfSMSNyBCaJwqWpEzzq/qvq9Wxxa7ow==
 
-"@sanity/image-url@^0.140.22":
+"@sanity/image-url@^0.140.15", "@sanity/image-url@^0.140.22":
   version "0.140.22"
   resolved "https://registry.npmjs.org/@sanity/image-url/-/image-url-0.140.22.tgz"
   integrity sha512-CAmQZnj+KM7FSEYiWlIGDit072syicYuAw0w7R2ctMzHiZ4p9mE/g6dBnYqrqFUrw2J+GpJgPt+RVspKP8vdqA==
@@ -385,6 +408,11 @@ brorand@^1.0.1, brorand@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
+
+browser-split@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.npmjs.org/browser-split/-/browser-split-0.0.0.tgz"
+  integrity sha1-QUGcrvdpdVkp3VGJZ9PuwKYmJ3E=
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -552,6 +580,13 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+class-list@~0.1.0, class-list@~0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/class-list/-/class-list-0.1.1.tgz"
+  integrity sha1-m5dFGSxBebXaCg12M2WOPHDXlss=
+  dependencies:
+    indexof "0.0.1"
 
 classnames@2.2.6:
   version "2.2.6"
@@ -1070,6 +1105,13 @@ hoist-non-react-statics@^3.0.0:
   dependencies:
     react-is "^16.7.0"
 
+html-element@^2.0.0:
+  version "2.3.1"
+  resolved "https://registry.npmjs.org/html-element/-/html-element-2.3.1.tgz"
+  integrity sha512-xnFt2ZkbFcjc+JoAtg3Hl89VeEZDjododu4VCPkRvFmBTHHA9U1Nt6hLUWfW2O+6Sl/rT1hHK/PivleX3PdBJQ==
+  dependencies:
+    class-list "~0.1.1"
+
 http-errors@1.7.3:
   version "1.7.3"
   resolved "https://registry.npmjs.org/http-errors/-/http-errors-1.7.3.tgz"
@@ -1085,6 +1127,15 @@ https-browserify@1.0.0, https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/https-browserify/-/https-browserify-1.0.0.tgz"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
+
+hyperscript@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/hyperscript/-/hyperscript-2.0.2.tgz"
+  integrity sha1-ODnLpFVUvf4nu4HCFC0WhPgTWvU=
+  dependencies:
+    browser-split "0.0.0"
+    class-list "~0.1.0"
+    html-element "^2.0.0"
 
 iconv-lite@0.4.24:
   version "0.4.24"
@@ -1116,6 +1167,11 @@ in-publish@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/in-publish/-/in-publish-2.0.1.tgz"
   integrity sha512-oDM0kUSNFC31ShNxHKUyfZKy8ZeXZBWMjMdZHKLOk13uvT27VTL/QzRGfRUcevJhpkZAvlhPYuXkF7eNWrtyxQ==
+
+indexof@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz"
+  integrity sha1-gtwzbSMrkGIXnQWrMpOmYFn9Q10=
 
 inherits@2.0.1, inherits@~2.0.1:
   version "2.0.1"
@@ -1712,7 +1768,7 @@ progress-stream@^2.0.0:
     speedometer "~1.0.0"
     through2 "~2.0.3"
 
-prop-types@15.7.2:
+prop-types@15.7.2, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
