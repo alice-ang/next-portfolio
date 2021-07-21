@@ -13,29 +13,35 @@ const Container = styled.div({
   gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
   gridAutoFlow: "dense",
   [Breakpoints.LaptopOrLarger]: {
-    width: "70%",
+    width: "80%",
     margin: "20px auto",
-    gridAutoRows: "200px 200px",
+    gridAutoRows: "300px 300px",
     gridGap: "20px",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   },
 });
 const Project = styled.div({
   height: "100%",
   width: "100%",
   position: "relative",
+  color: "white",
   h1: {
     fontSize: "1.2rem",
+    "&:hover": {
+      textDecoration: "underline",
+    },
   },
   overflow: "auto",
-  background: "red",
-  [Breakpoints.LaptopOrLarger]: {},
   ul: {
     padding: 0,
     margin: 0,
     li: {
       display: "inline-block",
+      padding: "0px 5px",
     },
+  },
+  img: {
+    filter: "blur(2px)",
   },
 });
 
@@ -45,8 +51,22 @@ const Text = styled.div({
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  pointerEvents: "none",
   zIndex: 4,
+});
+
+const Overlay = styled.div({
+  position: "absolute",
+  top: 0,
+  width: "100%",
+  height: "100%",
+  left: 0,
+  backgroundColor: "#000",
+  opacity: 0.5,
+  zIndex: 3,
+  display: "block",
+  [Breakpoints.LaptopOrLarger]: {
+    position: "relative",
+  },
 });
 
 const Projects = (props) => {
@@ -62,20 +82,21 @@ const Projects = (props) => {
                 >
                   <h1>{project.title}</h1>
                 </Link>
-                <Img
-                  src={useNextSanityImage(client, project.mainImage)}
-                  layout="responsive"
-                  sizes="(max-width: 800px) 100vw, 800px"
-                />
-
-                {project.categories && (
+                {/* {project.categories && (
                   <ul>
                     {project.categories.map((category) => (
                       <li key={category}>{category}</li>
                     ))}
                   </ul>
-                )}
+                )} */}
               </Text>
+              <Img
+                src={useNextSanityImage(client, project.mainImage)}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover"
+              />
+              <Overlay />
             </Project>
           );
         })}
