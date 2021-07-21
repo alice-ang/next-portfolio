@@ -26,9 +26,13 @@ const Project = styled.div({
   position: "relative",
   color: "white",
   h1: {
-    fontSize: "1.2rem",
+    textAlign: "center",
     "&:hover": {
+      cursor: "pointer",
       textDecoration: "underline",
+    },
+    [Breakpoints.TabletOrSmaller]: {
+      fontSize: "1.2rem",
     },
   },
   overflow: "auto",
