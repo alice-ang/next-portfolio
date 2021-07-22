@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-
+import { Theme } from "../styles/styles";
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -8,17 +8,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
-};
-
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={Theme}>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Header from "@components/Header";
 import Footer from "@components/Footer";
 import styled from "styled-components";
 
@@ -15,10 +14,7 @@ export default function Home() {
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Header title="Welcome to my app!" />
-        <Title>My page</Title>
-      </main>
+      <main></main>
       <Footer />
     </>
   );
