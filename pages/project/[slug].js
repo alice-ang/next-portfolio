@@ -1,6 +1,15 @@
 import groq from "groq";
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
+import Tag from "@components/Tag";
+import styled from "styled-components";
+
+const Tags = styled.div({
+  display: "flex",
+  flexWrap: "wrap",
+  padding: "10px 5px",
+});
+
 const Project = (props) => {
   const { title = "Missing title", categories, body } = props;
   return (
@@ -12,11 +21,11 @@ const Project = (props) => {
         dataset={client.dataset}
       />
       {categories && (
-        <ul>
+        <Tags>
           {categories.map((category) => (
-            <li key={category}>{category}</li>
+            <Tag key={category}>{category}</Tag>
           ))}
-        </ul>
+        </Tags>
       )}
     </article>
   );
