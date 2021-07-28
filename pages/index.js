@@ -18,7 +18,9 @@ const MainContent = styled.main({
     width: "80%",
   },
 });
-export default function Home(props) {
+export default function Home({ props }) {
+  const { galleryData, aboutData } = props.data;
+
   return (
     <>
       <Head>
@@ -27,28 +29,37 @@ export default function Home(props) {
       </Head>
       <Nav />
       <MainContent>
-        {/* <About props={props} />  */}
-        <Gallery images={props.images} />
+        <About props={aboutData} />
+        <Gallery images={galleryData.images} />
       </MainContent>
       <Footer />
     </>
   );
 }
 
-// const query = groq`*[_type=="author"][0]{
-//   name,
-//   mail,
-//   image,
-//   github,
-//   linkedin,
-//   bio
-// }`;
+const authorQuery = groq`*\[_type=="author"][0]{
+  name,
+  mail,
+  image,
+  github,
+  linkedin,
+  bio,
+  location
+}`;
 
-const query = groq`*[_type=="gallery" && title == "Featured"][0]{
+const galleryQuery = groq`*\[_type=="gallery" && title == "Featured"][0]{
   title,
   images
   }`;
-Home.getInitialProps = async function (context) {
-  const { title = "" } = context.query;
-  return await client.fetch(query, { title });
+
+Home.getInitialProps = async function () {
+  const aboutData = await client.fetch(authorQuery);
+  const galleryData = await client.fetch(galleryQuery);
+  const data = { galleryData, aboutData };
+  return {
+    props: {
+      data,
+    },
+    revalidate: 1,
+  };
 };

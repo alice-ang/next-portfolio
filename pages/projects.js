@@ -13,15 +13,13 @@ const Container = styled.div({
   gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
   gridAutoFlow: "dense",
   [Breakpoints.LaptopOrLarger]: {
-    gridAutoRows: "250px 250px",
+    gridAutoRows: "300px 300px",
     gridGap: "10px",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
   },
   [Breakpoints.BigScreenOrLarger]: {
     width: "80%",
-    gridAutoRows: "400px 400px",
-    gridGap: "20px",
-    gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+    margin: "0 auto",
   },
 });
 const Project = styled.div({
