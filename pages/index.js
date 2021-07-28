@@ -18,7 +18,6 @@ const MainContent = styled.main({
 });
 export default function Home({ props }) {
   const { galleryData, aboutData } = props.data;
-
   return (
     <>
       <Head>
@@ -27,7 +26,11 @@ export default function Home({ props }) {
       </Head>
       <MainContent>
         <About props={aboutData} />
-        <Gallery images={galleryData.images} />
+        <Gallery
+          images={galleryData.images}
+          title="All projects"
+          link={galleryData.buttonLink}
+        />
       </MainContent>
     </>
   );
@@ -45,7 +48,8 @@ const authorQuery = groq`*\[_type=="author"][0]{
 
 const galleryQuery = groq`*\[_type=="gallery" && title == "Featured"][0]{
   title,
-  images
+  images,
+  buttonLink
   }`;
 
 Home.getInitialProps = async function () {

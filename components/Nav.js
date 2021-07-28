@@ -7,5 +7,5 @@ const Menu = styled.nav`
 `;
 
 export default function Nav() {
-  return <Menu>hej</Menu>;
+  return <Menu>Projects | About</Menu>;
 }

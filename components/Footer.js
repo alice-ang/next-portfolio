@@ -1,9 +1,14 @@
+import styled from "styled-components";
+
 export default function Footer() {
+  const FooterContainer = styled.footer({
+    display: "flex",
+    padding: "1em",
+    background: "green  ",
+  });
   return (
     <>
-      <footer>
-        Made with <img src="/netliheart.svg" alt="Netlify Logo" /> for you
-      </footer>
+      <FooterContainer>Made using Sanity and NextJS</FooterContainer>
     </>
   );
 }

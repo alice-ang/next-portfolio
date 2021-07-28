@@ -3,16 +3,24 @@ import client from "../client";
 import styled from "styled-components";
 import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
-import BlockButton from "./BlockButton";
+import BlockButton from "./buttons/BlockButton";
+import { Breakpoints } from "@styles/styles";
+
 const Container = styled.div({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
   padding: "1em",
-
+  h2: {
+    marginBottom: "0.5em",
+  },
   h4: {
     margin: 0,
+  },
+  [Breakpoints.BigScreenOrLarger]: {
+    maxWidth: "500px",
+    margin: "0 auto",
   },
 });
 
@@ -51,7 +59,12 @@ export default function About({ props }) {
         dataset={client.dataset}
       /> */}
       <Buttons>
-        <BlockButton title="Follow" link={props.linkedin} target="_blank" />
+        <BlockButton
+          title="Linkedin"
+          link={props.linkedin}
+          target="_blank"
+          isLight
+        />
         <BlockButton title="Message" link={`mailto:${props.mail}`} />
       </Buttons>
     </Container>
