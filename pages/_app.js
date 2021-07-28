@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "../styles/styles";
+import Layout from "@components/Layout";
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={Theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   );

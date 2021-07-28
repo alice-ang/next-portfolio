@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Footer from "@components/Footer";
-import Nav from "@components/Nav";
 import About from "@components/About";
 import Gallery from "@components/Gallery";
 import styled from "styled-components";
@@ -24,15 +22,13 @@ export default function Home({ props }) {
   return (
     <>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>Alice Anglesjö</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
       <MainContent>
         <About props={aboutData} />
         <Gallery images={galleryData.images} />
       </MainContent>
-      <Footer />
     </>
   );
 }
