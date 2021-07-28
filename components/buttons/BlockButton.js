@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+
 const ButtonContainer = styled.button({
   display: "flex",
   width: "100%",
@@ -20,7 +21,6 @@ const ButtonContainer = styled.button({
 });
 
 export default function BlockButton(props) {
-  console.log(props);
   return (
     <Link href={props.link ? props.link : "/"} target={props.target}>
       <ButtonContainer isLight={props.isLight}>

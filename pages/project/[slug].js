@@ -4,6 +4,9 @@ import BlockContent from "@sanity/block-content-to-react";
 import Tag from "@components/Tag";
 import styled from "styled-components";
 
+const Container = styled.div({
+  padding: "1em",
+});
 const Tags = styled.div({
   display: "flex",
   flexWrap: "wrap",
@@ -13,7 +16,7 @@ const Tags = styled.div({
 const Project = (props) => {
   const { title = "Missing title", categories, body } = props;
   return (
-    <article>
+    <Container>
       <h1>{title}</h1>
       <BlockContent
         blocks={body}
@@ -27,7 +30,7 @@ const Project = (props) => {
           ))}
         </Tags>
       )}
-    </article>
+    </Container>
   );
 };
 

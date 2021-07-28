@@ -16,7 +16,7 @@ export default function LinkButton({ link, title, isRight }) {
       paddingLeft: "0.5em",
     },
   });
-  console.log("he", link);
+
   return (
     <Link href={`/${link}`}>
       <ButtonLink>

@@ -50,6 +50,7 @@ const Item = styled.div({
 const CTA = styled.div({
   display: "flex",
   justifyContent: "flex-end",
+  marginTop: 10,
   textTransform: "uppercase",
 });
 

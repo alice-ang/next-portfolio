@@ -3,6 +3,9 @@ export const Theme = {
     primary: "#0070f3",
     dark: "#000",
     light: "#fff",
+    gardient:
+      "linear-gradient(to right top, #ff00d6, #ff00a2, #ff0070, #ff1640, #ff4d00)",
+    heart: "#f79",
   },
 };
 

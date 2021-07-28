@@ -34,6 +34,12 @@ const ImageContainer = styled.div({
   },
 });
 
+const Text = styled.div({
+  display: "none",
+  [Breakpoints.LaptopOrLarger]: {
+    display: "block",
+  },
+});
 const Buttons = styled.div({
   width: "100%",
   marginTop: 10,
@@ -53,11 +59,13 @@ export default function About({ props }) {
 
       <h2>{props.name}</h2>
       <h4>{props.location}</h4>
-      {/* <BlockContent
-        blocks={props.bio}
-        projectId={client.projectId}
-        dataset={client.dataset}
-      /> */}
+      <Text>
+        <BlockContent
+          blocks={props.bio}
+          projectId={client.projectId}
+          dataset={client.dataset}
+        />
+      </Text>
       <Buttons>
         <BlockButton
           title="Linkedin"

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Badge = styled.div({
-  background: "red",
+  background: ({ theme }) => theme.colors.gardient,
+  color: ({ theme }) => theme.colors.light,
   width: "fit-content",
   padding: "7px 12px",
   margin: "0.5em",
