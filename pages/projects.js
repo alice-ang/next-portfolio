@@ -17,10 +17,6 @@ const Container = styled.div({
     gridGap: "10px",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
   },
-  [Breakpoints.BigScreenOrLarger]: {
-    width: "80%",
-    margin: "0 auto",
-  },
 });
 const Project = styled.div({
   height: "100%",
@@ -88,13 +84,6 @@ const Projects = (props) => {
                 >
                   <h1>{project.title}</h1>
                 </Link>
-                {/* {project.categories && (
-                  <ul>
-                    {project.categories.map((category) => (
-                      <li key={category}>{category}</li>
-                    ))}
-                  </ul>
-                )} */}
               </Text>
               <Img
                 src={useNextSanityImage(client, project.mainImage)}
@@ -114,12 +103,10 @@ const Projects = (props) => {
 const query = groq`*[_type == "project"]{
   title,
   slug,
-  "categories": categories[]->title,
   mainImage
 }`;
 
 Projects.getInitialProps = async function (context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { title = "" } = context.query;
   return await client.fetch(query, { title });
 };

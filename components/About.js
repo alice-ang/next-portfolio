@@ -5,6 +5,8 @@ import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import BlockButton from "./buttons/BlockButton";
 import { Breakpoints } from "@styles/styles";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 
 const Container = styled.div({
   display: "flex",
@@ -67,13 +69,17 @@ export default function About({ props }) {
         />
       </Text>
       <Buttons>
+        <BlockButton title="Message" link={`mailto:${props.mail}`}>
+          <FaEnvelope />
+        </BlockButton>
         <BlockButton
           title="Linkedin"
           link={props.linkedin}
           target="_blank"
           isLight
-        />
-        <BlockButton title="Message" link={`mailto:${props.mail}`} />
+        >
+          <FaLinkedin />
+        </BlockButton>
       </Buttons>
     </Container>
   );
