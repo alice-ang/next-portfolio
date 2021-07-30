@@ -12,9 +12,6 @@ const Title = styled.h1`
 `;
 const MainContent = styled.main({
   margin: "0 auto",
-  [Breakpoints.BigScreenOrLarger]: {
-    width: "80%",
-  },
 });
 export default function Home({ props }) {
   const { galleryData, aboutData } = props.data;

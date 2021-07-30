@@ -5,7 +5,7 @@ const Badge = styled.div({
   color: ({ theme }) => theme.colors.light,
   width: "fit-content",
   padding: "7px 12px",
-  margin: "0.5em",
+  margin: "0.3em",
   borderRadius: "10px",
   fontWeight: "bold",
   textTransform: "uppercase",

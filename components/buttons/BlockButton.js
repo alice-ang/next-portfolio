@@ -20,11 +20,30 @@ const ButtonContainer = styled.button({
   margin: "5px 0px",
 });
 
-export default function BlockButton(props) {
+const ButtonContent = styled.span({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  h3: {
+    marginRight: 10,
+  },
+});
+
+export default function BlockButton({
+  link,
+  target,
+  isLight,
+  title,
+  children,
+}) {
   return (
-    <Link href={props.link ? props.link : "/"} target={props.target}>
-      <ButtonContainer isLight={props.isLight}>
-        <h3>{props.title}</h3>
+    <Link href={link ? link : "/"} target={target}>
+      <ButtonContainer isLight={isLight}>
+        <ButtonContent>
+          <h3>{title}</h3>
+          {children}
+        </ButtonContent>
       </ButtonContainer>
     </Link>
   );
