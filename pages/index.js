@@ -25,6 +25,7 @@ export default function Home({ props }) {
       <MainContent>
         <About props={aboutData} />
         <Gallery
+          heading="Sneak peak 👀 "
           images={galleryData.images}
           title="All projects"
           link={galleryData.buttonLink}

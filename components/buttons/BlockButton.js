@@ -18,6 +18,10 @@ const ButtonContainer = styled.button({
   border: (props) =>
     props.isLight ? `2px solid ${({ theme }) => theme.colors.dark}` : "none",
   margin: "5px 0px",
+  "&:hover": {
+    cursor: "pointer",
+    opacity: 0.8,
+  },
 });
 
 const ButtonContent = styled.span({
@@ -38,7 +42,7 @@ export default function BlockButton({
   children,
 }) {
   return (
-    <Link href={link ? link : "/"} target={target}>
+    <Link href={link ? link : "/"} target={target} target="_blank">
       <ButtonContainer isLight={isLight}>
         <ButtonContent>
           <h3>{title}</h3>

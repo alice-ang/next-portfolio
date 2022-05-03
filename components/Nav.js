@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Breakpoints } from "@styles/styles";
 import Link from "next/link";
+
 const Menu = styled.nav({
   display: "flex",
   justifyContent: "center",
