@@ -68,7 +68,7 @@ export default function About({ props }) {
         />
       </Text>
       <Buttons>
-        <BlockButton title="Github" link={props.github}>
+        <BlockButton title="Github" link={props.github} target="_blank">
           <FaGithub />
         </BlockButton>
         {/* <BlockButton title="Message" link={`mailto:${props.mail}`}>

@@ -23,18 +23,30 @@ const IconContainer = styled.div({
   padding: "1em 0",
   svg: {
     fontSize: "1.5em",
-    "&:hover": {
-      transform: "scale(1.2)",
-      transition: "0.2s",
-      cursor: "pointer",
-      color: ({ theme }) => theme.colors.accent,
-    },
+  },
+  a: {
+    color: ({ theme }) => theme.colors.light,
+    textDecoration: "none",
   },
 });
 
 const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
 `;
+
+const IconSpan = styled.span({
+  display: "inline-flex",
+  alignItems: "center",
+  "&:hover": {
+    transform: "scale(1.1)",
+    transition: "0.2s",
+    cursor: "pointer",
+    color: ({ theme }) => theme.colors.accent,
+  },
+  span: {
+    paddingLeft: 8,
+  },
+});
 
 const Tags = styled.div({
   display: "flex",
@@ -78,14 +90,20 @@ const Project = (props) => {
       </Grid> */}
       <IconContainer>
         {githubUrl && (
-          <Link href={githubUrl} target="_blank">
-            <FaGithub />
-          </Link>
+          <a href={githubUrl} target="_blank">
+            <IconSpan>
+              <FaGithub />
+              <span>See code</span>
+            </IconSpan>
+          </a>
         )}
         {demoUrl && (
-          <Link href={demoUrl} target="_blank">
-            <FaDesktop />
-          </Link>
+          <a href={demoUrl} target="_blank">
+            <IconSpan>
+              <FaDesktop />
+              <span>Demo</span>
+            </IconSpan>
+          </a>
         )}
       </IconContainer>
       <h3>{title}</h3>

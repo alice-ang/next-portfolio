@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Breakpoints } from "@styles/styles";
 import Link from "next/link";
+
 const Menu = styled.nav({
   display: "flex",
   justifyContent: "center",
@@ -14,6 +14,7 @@ const Menu = styled.nav({
     textTransform: "uppercase",
     "&:hover": {
       cursor: "pointer",
+      color: ({ theme }) => theme.colors.light,
       border: `6px solid ${({ theme }) => theme.colors.gradient}`,
     },
   },

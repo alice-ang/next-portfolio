@@ -8,6 +8,11 @@ import LinkButton from "./buttons/LinkButton";
 const Container = styled.div({
   textAlign: "center",
 });
+
+const Heading = styled.h2({
+  textAlign: "left",
+});
+
 const GalleryContainer = styled.div({
   display: "grid",
   gridAutoRows: "150px 150px",
@@ -55,9 +60,10 @@ const CTA = styled.div({
   textTransform: "uppercase",
 });
 
-export default function Gallery({ images, title, link }) {
+export default function Gallery({ heading, images, title, link }) {
   return (
     <Container>
+      <Heading>{heading}</Heading>
       <GalleryContainer>
         {images.map((image, index) => {
           return (
