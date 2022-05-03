@@ -24,6 +24,10 @@ const IconContainer = styled.div({
   svg: {
     fontSize: "1.5em",
   },
+  a: {
+    color: ({ theme }) => theme.colors.light,
+    textDecoration: "none",
+  },
 });
 
 const Grid = styled.div`
@@ -86,20 +90,20 @@ const Project = (props) => {
       </Grid> */}
       <IconContainer>
         {githubUrl && (
-          <Link href={githubUrl} target="_blank">
+          <a href={githubUrl} target="_blank">
             <IconSpan>
               <FaGithub />
               <span>See code</span>
             </IconSpan>
-          </Link>
+          </a>
         )}
         {demoUrl && (
-          <Link href={demoUrl} target="_blank">
+          <a href={demoUrl} target="_blank">
             <IconSpan>
               <FaDesktop />
               <span>Demo</span>
             </IconSpan>
-          </Link>
+          </a>
         )}
       </IconContainer>
       <h3>{title}</h3>
