@@ -14,6 +14,7 @@ const Menu = styled.nav({
     textTransform: "uppercase",
     "&:hover": {
       cursor: "pointer",
+      color: ({ theme }) => theme.colors.light,
       border: `6px solid ${({ theme }) => theme.colors.gradient}`,
     },
   },

@@ -42,13 +42,13 @@ export default function BlockButton({
   children,
 }) {
   return (
-    <Link href={link ? link : "/"} target={target} target="_blank">
+    <a href={link ? link : "/"} target={target}>
       <ButtonContainer isLight={isLight}>
         <ButtonContent>
           <h3>{title}</h3>
           {children}
         </ButtonContent>
       </ButtonContainer>
-    </Link>
+    </a>
   );
 }
