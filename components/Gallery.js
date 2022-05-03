@@ -26,6 +26,7 @@ const Item = styled.div({
   width: "100%",
   position: "relative",
   color: "white",
+  borderRadius: 3,
   h1: {
     textAlign: "center",
     "&:hover": {

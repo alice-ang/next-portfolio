@@ -1,6 +1,28 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background: rgb(38, 34, 99);
+  color: #fff;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Libre Bodoni', serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+`;
 export const Theme = {
   colors: {
-    primary: "#0070f3",
+    primary: "rgb(38, 34, 99)",
+    accent: "rgb(255, 119, 121)",
     dark: "#000",
     light: "#fff",
     gardient:

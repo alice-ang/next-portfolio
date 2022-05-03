@@ -6,11 +6,10 @@ const Menu = styled.nav({
   justifyContent: "center",
   padding: 0,
   a: {
-    color: ({ theme }) => theme.colors.dark,
+    color: ({ theme }) => theme.colors.accent,
     padding: "1em",
     listStyle: "none",
     fontSize: "1.2em",
-    fontWeight: "bold",
     textDecoration: "none",
     textTransform: "uppercase",
     "&:hover": {

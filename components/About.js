@@ -5,8 +5,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import BlockButton from "./buttons/BlockButton";
 import { Breakpoints } from "@styles/styles";
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Container = styled.div({
   display: "flex",
@@ -20,7 +19,7 @@ const Container = styled.div({
   h4: {
     margin: 0,
   },
-  [Breakpoints.BigScreenOrLarger]: {
+  [Breakpoints.LaptopOrLarger]: {
     maxWidth: "500px",
     margin: "0 auto",
   },
@@ -60,7 +59,7 @@ export default function About({ props }) {
       </ImageContainer>
 
       <h2>{props.name}</h2>
-      <h4>{props.location}</h4>
+      <h4>📍 {props.location}</h4>
       <Text>
         <BlockContent
           blocks={props.bio}
@@ -69,9 +68,12 @@ export default function About({ props }) {
         />
       </Text>
       <Buttons>
-        <BlockButton title="Message" link={`mailto:${props.mail}`}>
-          <FaEnvelope />
+        <BlockButton title="Github" link={props.github}>
+          <FaGithub />
         </BlockButton>
+        {/* <BlockButton title="Message" link={`mailto:${props.mail}`}>
+          <FaEnvelope />
+        </BlockButton> */}
         <BlockButton
           title="Linkedin"
           link={props.linkedin}
