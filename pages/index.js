@@ -4,12 +4,7 @@ import Gallery from "@components/Gallery";
 import styled from "styled-components";
 import groq from "groq";
 import client from "../client";
-import { Breakpoints } from "@styles/styles";
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
 const MainContent = styled.main({
   margin: "0 auto",
 });
@@ -18,8 +13,14 @@ export default function Home({ props }) {
   return (
     <>
       <Head>
-        <title>Alice Anglesjö</title>
+        <title>Alice Anglesjö | Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@600&family=Roboto&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <MainContent>
         <About props={aboutData} />
