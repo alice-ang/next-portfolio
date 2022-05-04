@@ -73,30 +73,28 @@ const Overlay = styled.div({
 
 const Projects = (props) => {
   return (
-    <>
-      <Container>
-        {Object.values(props).map((project) => {
-          return (
-            <Project key={project.title}>
-              <Text>
-                <Link
-                  href={`/project/${encodeURIComponent(project.slug.current)}`}
-                >
-                  <h1>{project.title}</h1>
-                </Link>
-              </Text>
-              <Img
-                src={useNextSanityImage(client, project.mainImage)}
-                alt={project.title}
-                layout="fill"
-                objectFit="cover"
-              />
-              <Overlay />
-            </Project>
-          );
-        })}
-      </Container>
-    </>
+    <Container>
+      {Object.values(props).map((project) => {
+        return (
+          <Project key={project.title}>
+            <Text>
+              <Link
+                href={`/project/${encodeURIComponent(project.slug.current)}`}
+              >
+                <h1>{project.title}</h1>
+              </Link>
+            </Text>
+            <Img
+              src={useNextSanityImage(client, project.mainImage)}
+              alt={project.title}
+              layout="fill"
+              objectFit="cover"
+            />
+            <Overlay />
+          </Project>
+        );
+      })}
+    </Container>
   );
 };
 
