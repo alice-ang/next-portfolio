@@ -54,13 +54,15 @@ const Tags = styled.div({
   padding: "10px 5px",
 });
 
+const Row = styled.div({});
+
 const Project = (props) => {
   const {
     title = "Missing title",
     categories,
     body,
     mainImage,
-    imagesGallery,
+    createdAt,
     githubUrl,
     demoUrl,
   } = props;
@@ -108,7 +110,10 @@ const Project = (props) => {
             </a>
           )}
         </IconContainer>
-        <h3>{title}</h3>
+        <Row>
+          <h3>{title}</h3>
+          <p> Developed in {new Date(createdAt).getFullYear()}</p>
+        </Row>
         <BlockContent
           blocks={body}
           projectId={client.projectId}
@@ -133,7 +138,8 @@ const query = groq`*[_type == "project" && slug.current == $slug][0]{
   "imagesGallery": imagesGallery[].asset->url,
   demoUrl,
   githubUrl,
-  body
+  body,
+  createdAt
 }`;
 
 Project.getInitialProps = async function (context) {
