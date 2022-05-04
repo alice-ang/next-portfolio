@@ -112,7 +112,9 @@ const Project = (props) => {
         </IconContainer>
         <Row>
           <h3>{title}</h3>
-          <p> Developed in {new Date(createdAt).getFullYear()}</p>
+          {createdAt && (
+            <p> Developed in {new Date(createdAt).getFullYear()}</p>
+          )}
         </Row>
         <BlockContent
           blocks={body}
