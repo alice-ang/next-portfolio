@@ -36,10 +36,7 @@ const ImageContainer = styled.div({
 });
 
 const Text = styled.div({
-  display: "none",
-  [Breakpoints.LaptopOrLarger]: {
-    display: "block",
-  },
+  display: "block",
 });
 const Buttons = styled.div({
   width: "100%",

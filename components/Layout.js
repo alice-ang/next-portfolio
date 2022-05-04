@@ -14,7 +14,7 @@ const Content = styled.div({
 export default function Layout({ children }) {
   return (
     <Content>
-      <Nav />
+      {/* <Nav /> */}
       {children}
       <Footer />
     </Content>

@@ -24,7 +24,7 @@ export default function Nav() {
   return (
     <Menu>
       <Link href="/">Home</Link>
-      <Link href="/projects">Projects</Link>
+      {/* <Link href="/projects">Projects</Link> */}
     </Menu>
   );
 }
