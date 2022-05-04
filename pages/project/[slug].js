@@ -111,7 +111,7 @@ const Project = (props) => {
           )}
         </IconContainer>
         <Row>
-          <h3>{title}</h3>
+          <h2>{title}</h2>
           {createdAt && (
             <p> Developed in {new Date(createdAt).getFullYear()}</p>
           )}
