@@ -8,7 +8,7 @@ import Img from "next/image";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaDesktop } from "@react-icons/all-files/fa/FaDesktop";
 import Link from "next/link";
-import { ImageGrid } from "@components/ImageGrid";
+import Nav from "@components/Nav";
 
 const Container = styled.div({
   padding: "1em",
@@ -66,15 +66,17 @@ const Project = (props) => {
   } = props;
 
   return (
-    <Container>
-      {/* <ImageGrid images={imagesGallery} /> */}
-      <Img
-        src={useNextSanityImage(client, mainImage)}
-        alt={title}
-        layout="responsive"
-        objectFit="contain"
-      />
-      {/* <Grid>
+    <>
+      <Nav />
+      <Container>
+        {/* <ImageGrid images={imagesGallery} /> */}
+        <Img
+          src={useNextSanityImage(client, mainImage)}
+          alt={title}
+          layout="responsive"
+          objectFit="contain"
+        />
+        {/* <Grid>
         {imagesGallery.map((image) => {
           return (
             <Img
@@ -88,38 +90,39 @@ const Project = (props) => {
           );
         })}
       </Grid> */}
-      <IconContainer>
-        {githubUrl && (
-          <a href={githubUrl} target="_blank">
-            <IconSpan>
-              <FaGithub />
-              <span>See code</span>
-            </IconSpan>
-          </a>
+        <IconContainer>
+          {githubUrl && (
+            <a href={githubUrl} target="_blank">
+              <IconSpan>
+                <FaGithub />
+                <span>See code</span>
+              </IconSpan>
+            </a>
+          )}
+          {demoUrl && (
+            <a href={demoUrl} target="_blank">
+              <IconSpan>
+                <FaDesktop />
+                <span>Demo</span>
+              </IconSpan>
+            </a>
+          )}
+        </IconContainer>
+        <h3>{title}</h3>
+        <BlockContent
+          blocks={body}
+          projectId={client.projectId}
+          dataset={client.dataset}
+        />
+        {categories && (
+          <Tags>
+            {categories.map((category) => (
+              <Tag key={category}>{category}</Tag>
+            ))}
+          </Tags>
         )}
-        {demoUrl && (
-          <a href={demoUrl} target="_blank">
-            <IconSpan>
-              <FaDesktop />
-              <span>Demo</span>
-            </IconSpan>
-          </a>
-        )}
-      </IconContainer>
-      <h3>{title}</h3>
-      <BlockContent
-        blocks={body}
-        projectId={client.projectId}
-        dataset={client.dataset}
-      />
-      {categories && (
-        <Tags>
-          {categories.map((category) => (
-            <Tag key={category}>{category}</Tag>
-          ))}
-        </Tags>
-      )}
-    </Container>
+      </Container>
+    </>
   );
 };
 
